@@ -71,7 +71,7 @@ COPY --from=builder /KubeArmor/$OPERATOR_DIR/operator /operator
 ENTRYPOINT ["/operator"]
 
 # Build operator image with ubi as base image
-FROM redhat/ubi10-minimal@sha256:3948fdfe71007909b37faf48c52eda28bfab7c4e440d6f4d4619422d06ceeb4c AS operator-ubi
+FROM redhat/ubi10-minimal@sha256:d63890a635f8f19177bce1775f74f587a47f4456844f1392456c4e3673a48753 AS operator-ubi
 
 ARG VERSION=latest
 
@@ -106,7 +106,7 @@ COPY --from=builder /KubeArmor/$OPERATOR_DIR/hook/hook /hook
 ENTRYPOINT ["/snitch"]
 
 # Build snitch with ubi as base image
-FROM redhat/ubi10-minimal@sha256:3948fdfe71007909b37faf48c52eda28bfab7c4e440d6f4d4619422d06ceeb4c AS snitch-ubi
+FROM redhat/ubi10-minimal@sha256:d63890a635f8f19177bce1775f74f587a47f4456844f1392456c4e3673a48753 AS snitch-ubi
 
 ARG VERSION=latest
 
